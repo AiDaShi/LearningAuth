@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
@@ -6,11 +7,11 @@ namespace MicrosoftDefaultAuth.AuthorizationRequirements
 {
     public class CustomRequireClaim:IAuthorizationRequirement
     {
-        public string claimType {get;}
+        public string ClaimType { get;}
 
-        public CustomRequireClaim(string claimType)
+        public CustomRequireClaim(string ClaimType)
         {
-            this.claimType = claimType;
+            this.ClaimType = ClaimType;
         }
     }
 
@@ -18,8 +19,12 @@ namespace MicrosoftDefaultAuth.AuthorizationRequirements
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, CustomRequireClaim requirement)
         {
-            throw new NotImplementedException();
+            var hasClaim = context.User.Claims.Any(x => x.Type == requirement.ClaimType);
+            if (hasClaim)
+            {
+                context.Succeed(requirement);
+            }
+            return Task.CompletedTask;
         }
     }
-
 }

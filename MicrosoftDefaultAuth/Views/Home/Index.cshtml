@@ -1,7 +1,30 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Authorization
+@{
     ViewData["Title"] = "Home Page";
 }
+<h1> Home Page </h1>
 
-<div class="text-center">
-    <h1 class="display-4"> Home Page </h1>
-</div>
+@* Sample access quick checks *@
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>User is authenticated</h1>
+}
+else
+{
+    <h1>User is Not authenticated</h1>
+}
+
+
+@* Big guns reusable functions *@
+
+@inject IAuthorizationService authorizationService
+
+@if ((await authorizationService.AuthorizeAsync(User, "Claim.DoB")).Succeeded)
+{
+    <h1>User has DoB Claim</h1>
+}
+
+@if ((await authorizationService.AuthorizeAsync(User, "Admin")).Succeeded)
+{
+    <h1>User has Admin Claim</h1>
+}

@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MicrosoftDefaultAuth.AuthorizationRequirements;
+using MicrosoftDefaultAuth.Controllers;
+using MicrosoftDefaultAuth.CustomAuthorizationPolicyProvider;
+using MicrosoftDefaultAuth.Extensions;
+using MicrosoftDefaultAuth.Transformer;
 
 namespace MicrosoftDefaultAuth
 {
@@ -26,12 +33,52 @@ namespace MicrosoftDefaultAuth
         {
             services.AddAuthentication("CookieAuth")
                 .AddCookie("CookieAuth",config=>{
-                    config.Cookie.Name = "HiMinYang";
+                    config.Cookie.Name = "HeMinYang";
                     config.LoginPath = "/Home/Index";
                 });
-            
-            services.AddAuthorization(config=>{
-                //创建构建器
+
+            services.AddSingleton<IAuthorizationPolicyProvider, CustomAuthorizationPolicyProvider.CustomAuthorizationPolicyProvider>();
+            services.AddScoped<IAuthorizationHandler, SecurityLevelHandler>();
+            services.AddScoped<IAuthorizationHandler, CustomRequireClaimHandle>();
+            services.AddScoped<IAuthorizationHandler, CookieJarAuthorizationHandler>();
+            services.AddScoped<IClaimsTransformation, ClaimsTransformation>();
+
+            //因为有了CustomAuthorizationPolicyProvider的依赖注入在这里我们就不需要这个了
+            //services.AddAuthorization(config=>{
+            //    //第一种
+            //    //创建构建器
+            //    //var defaultAuthBuilder = new AuthorizationPolicyBuilder();
+            //    //var defaultAuthPolicy = defaultAuthBuilder
+            //    //    //需要有用户
+            //    //    .RequireAuthenticatedUser()
+            //    //    //需要有出生日期
+            //    //    .RequireClaim(ClaimTypes.DateOfBirth)
+            //    //    .Build();
+            //    //config.DefaultPolicy = defaultAuthPolicy;
+
+            //    //第二种
+            //    //config.AddPolicy("Claim.DoB", policyBuilder => {
+            //    //    policyBuilder.RequireClaim(ClaimTypes.DateOfBirth);
+            //    //});
+
+            //    //第三种 注册授权政策
+            //    //config.AddPolicy("Claim.DoB", policyBuilder => {
+            //    //    policyBuilder.AddRequirements(new CustomRequireClaim(ClaimTypes.DateOfBirth));
+            //    //});
+
+            //    //第四种 （中间件的方式）
+            //    config.AddPolicy("Claim.DoB", policyBuilder =>
+            //    {
+            //        policyBuilder.RequireCustomClaim(ClaimTypes.DateOfBirth);
+            //    });
+
+            //    config.AddPolicy("Admin", policyBuilder => policyBuilder.RequireClaim(ClaimTypes.Role, "Admin"));
+
+            //});
+
+
+            services.AddControllersWithViews(config=> {
+
                 var defaultAuthBuilder = new AuthorizationPolicyBuilder();
                 var defaultAuthPolicy = defaultAuthBuilder
                     //需要有用户
@@ -39,14 +86,9 @@ namespace MicrosoftDefaultAuth
                     //需要有出生日期
                     .RequireClaim(ClaimTypes.DateOfBirth)
                     .Build();
-                
-                config.DefaultPolicy = defaultAuthPolicy;
 
-
+                //config.Filters.Add(new AuthorizeFilter(defaultAuthPolicy));
             });
-
-
-            services.AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
