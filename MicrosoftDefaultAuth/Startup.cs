@@ -44,37 +44,38 @@ namespace MicrosoftDefaultAuth
             services.AddScoped<IClaimsTransformation, ClaimsTransformation>();
 
             //因为有了CustomAuthorizationPolicyProvider的依赖注入在这里我们就不需要这个了
-            //services.AddAuthorization(config=>{
-            //    //第一种
-            //    //创建构建器
-            //    //var defaultAuthBuilder = new AuthorizationPolicyBuilder();
-            //    //var defaultAuthPolicy = defaultAuthBuilder
-            //    //    //需要有用户
-            //    //    .RequireAuthenticatedUser()
-            //    //    //需要有出生日期
-            //    //    .RequireClaim(ClaimTypes.DateOfBirth)
-            //    //    .Build();
-            //    //config.DefaultPolicy = defaultAuthPolicy;
+            services.AddAuthorization(config =>
+            {
+                //第一种
+                //创建构建器
+                //var defaultAuthBuilder = new AuthorizationPolicyBuilder();
+                //var defaultAuthPolicy = defaultAuthBuilder
+                //    //需要有用户
+                //    .RequireAuthenticatedUser()
+                //    //需要有出生日期
+                //    .RequireClaim(ClaimTypes.DateOfBirth)
+                //    .Build();
+                //config.DefaultPolicy = defaultAuthPolicy;
 
-            //    //第二种
-            //    //config.AddPolicy("Claim.DoB", policyBuilder => {
-            //    //    policyBuilder.RequireClaim(ClaimTypes.DateOfBirth);
-            //    //});
+                //第二种
+                //config.AddPolicy("Claim.DoB", policyBuilder => {
+                //    policyBuilder.RequireClaim(ClaimTypes.DateOfBirth);
+                //});
 
-            //    //第三种 注册授权政策
-            //    //config.AddPolicy("Claim.DoB", policyBuilder => {
-            //    //    policyBuilder.AddRequirements(new CustomRequireClaim(ClaimTypes.DateOfBirth));
-            //    //});
+                //第三种 注册授权政策
+                //config.AddPolicy("Claim.DoB", policyBuilder => {
+                //    policyBuilder.AddRequirements(new CustomRequireClaim(ClaimTypes.DateOfBirth));
+                //});
 
-            //    //第四种 （中间件的方式）
-            //    config.AddPolicy("Claim.DoB", policyBuilder =>
-            //    {
-            //        policyBuilder.RequireCustomClaim(ClaimTypes.DateOfBirth);
-            //    });
+                //第四种 （中间件的方式）
+                config.AddPolicy("Claim.DoB", policyBuilder =>
+                {
+                    policyBuilder.RequireCustomClaim(ClaimTypes.DateOfBirth);
+                });
 
-            //    config.AddPolicy("Admin", policyBuilder => policyBuilder.RequireClaim(ClaimTypes.Role, "Admin"));
+                config.AddPolicy("Admin", policyBuilder => policyBuilder.RequireClaim(ClaimTypes.Role, "Admin"));
 
-            //});
+            });
 
 
             services.AddControllersWithViews(config=> {
@@ -89,6 +90,17 @@ namespace MicrosoftDefaultAuth
 
                 //config.Filters.Add(new AuthorizeFilter(defaultAuthPolicy));
             });
+
+            //添加Razor服务
+            services.AddRazorPages()
+                .AddRazorPagesOptions(config=> {
+                    config.Conventions.AuthorizePage("/Razor/Secured");
+                    //验证路径 与 政策
+                    config.Conventions.AuthorizePage("/Razor/Policy","Admin");
+                    //添加文件夹路由
+                    config.Conventions.AuthorizeFolder("/RazorSecured");
+                    config.Conventions.AllowAnonymousToPage("/RazorSecured/Anon");
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -110,6 +122,8 @@ namespace MicrosoftDefaultAuth
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                //调用Razor中间件
+                endpoints.MapRazorPages();
             });
         }
     }

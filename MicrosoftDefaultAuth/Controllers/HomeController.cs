@@ -75,6 +75,7 @@ namespace MicrosoftDefaultAuth.Controllers
                 new Claim(ClaimTypes.Name,"Bob"),
                 new Claim(ClaimTypes.Email,"86382516@qq.com"),
                 new Claim(ClaimTypes.DateOfBirth,DateTime.Now.ToString()),
+                new Claim(ClaimTypes.Role, "Admin"),
                 new Claim(ClaimTypes.Role,"AdminTwo"),
                 new Claim(DynamicPilicies.SecurityLevel,"7"),
                 new Claim("HeMinYang","Very Outstanding boi.")
