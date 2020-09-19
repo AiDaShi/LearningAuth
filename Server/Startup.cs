@@ -48,9 +48,10 @@ namespace Server
                         IssuerSigningKey = key
                     };
                 });
-
+ 
             
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+            .AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }
 
