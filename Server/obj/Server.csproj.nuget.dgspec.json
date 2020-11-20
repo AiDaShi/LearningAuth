@@ -1,25 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hebo/myfile/cshrp/LearningAuth/Server/Server.csproj": {}
+    "E:\\core3.0\\LearningAuth\\Server\\Server.csproj": {}
   },
   "projects": {
-    "/Users/hebo/myfile/cshrp/LearningAuth/Server/Server.csproj": {
+    "E:\\core3.0\\LearningAuth\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hebo/myfile/cshrp/LearningAuth/Server/Server.csproj",
+        "projectUniqueName": "E:\\core3.0\\LearningAuth\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "/Users/hebo/myfile/cshrp/LearningAuth/Server/Server.csproj",
-        "packagesPath": "/Users/hebo/.nuget/packages/",
-        "outputPath": "/Users/hebo/myfile/cshrp/LearningAuth/Server/obj/",
+        "projectPath": "E:\\core3.0\\LearningAuth\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\cn49ak\\.nuget\\packages\\",
+        "outputPath": "E:\\core3.0\\LearningAuth\\Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/hebo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\cn49ak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Download2\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "E:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +54,10 @@
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
@@ -63,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj": {}
+  },
+  "projects": {
+    "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
+        "projectName": "XamarinApp.Android",
+        "projectPath": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
+        "packagesPath": "C:\\Users\\cn49ak\\.nuget\\packages\\",
+        "outputPath": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp.Android\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cn49ak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Download2\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "E:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {
+              "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
+                "projectPath": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\XamarinApp.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Plugin.CurrentActivity": {
+              "target": "Package",
+              "version": "[2.1.0.4, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.6.0.1141, )"
+            }
+          }
+        }
+      }
+    },
+    "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\XamarinApp.csproj",
+        "projectName": "XamarinApp",
+        "projectPath": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\XamarinApp.csproj",
+        "packagesPath": "C:\\Users\\cn49ak\\.nuget\\packages\\",
+        "outputPath": "E:\\core3.0\\LearningAuth\\XamarinApp\\XamarinApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cn49ak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Download2\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "E:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "IdentityModel.OidcClient": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.6.0.1141, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+﻿@model RegisterViewModel
+
+<form asp-controller="Auth" asp-action="ExternalRegister" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div>
+        <label>Username</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div>
+        <button type="submit">Register In</button>
+    </div>
+</form>

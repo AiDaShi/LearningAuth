@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "YXia+PCIlh0HnzvNNrB+oX+3J8bzYsfmUROlQ++s9gB0Z3R7FN5mdlM2zSe1JJY4IDZnTc+XetPSd+PwlQu/fw==",
+  "success": true,
+  "projectFilePath": "E:\\core3.0\\LearningAuth\\MvcClient\\MvcClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cn49ak\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\3.1.8\\microsoft.aspnetcore.authentication.openidconnect.3.1.8.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.5.0\\microsoft.identitymodel.jsonwebtokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.identitymodel.logging\\5.5.0\\microsoft.identitymodel.logging.5.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.5.0\\microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\system.identitymodel.tokens.jwt\\5.5.0\\system.identitymodel.tokens.jwt.5.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\cn49ak\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

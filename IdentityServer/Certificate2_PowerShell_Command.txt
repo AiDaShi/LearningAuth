@@ -1,0 +1,20 @@
+﻿# 在PowerShell中执行命令，生成凭证，更多请参考：https://docs.microsoft.com/zh-cn/archive/blogs/kaevans/using-powershell-with-certificates
+
+$cert = New-SelfSignedCertificate -Subject "CN=IdentityServerCert" -CertStoreLocation cert:\CurrentUser\My -Provider "Microsoft Strong Cryptographic Provider"
+
+# 是否需要通过属性（例如其主题）获得现有证书？您可以使用Get-ChildItem cmdlet并指定证书存储的路径。
+
+Get-ChildItem -Path cert:\CurrentUser\My
+
+# 获取单个证书路径
+
+$cert = Get-ChildItem -Path cert:\CurrentUser\My | ?{$_.Subject -eq "CN=IdentityServerCert"}
+
+# 导出私钥
+
+$cred = Get-Credential
+Export-PfxCertificate -Cert $cert -Password $cred.Password -FilePath "./is_cert.pfx"
+
+# 删除证书
+
+Remove-Item -Path ("cert:\CurrentUser\My\" + $cert.Thumbprint)

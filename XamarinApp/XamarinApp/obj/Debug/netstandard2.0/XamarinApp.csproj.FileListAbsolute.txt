@@ -1,0 +1,14 @@
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\bin\Debug\netstandard2.0\XamarinApp.deps.json
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\bin\Debug\netstandard2.0\XamarinApp.dll
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.csprojAssemblyReference.cache
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.AssemblyInfoInputs.cache
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.AssemblyInfo.cs
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\bin\Debug\netstandard2.0\ref\XamarinApp.dll
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\bin\Debug\netstandard2.0\XamarinApp.pdb
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.csproj.CoreCompileInputs.cache
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.dll
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\ref\XamarinApp.dll
+E:\core3.0\LearningAuth\XamarinApp\XamarinApp\obj\Debug\netstandard2.0\XamarinApp.pdb

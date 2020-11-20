@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Home Page</h1>
+
+<button type="button" onclick="signIn()">SignIn</button>
+
+<div>
+    <button type="button" onclick="signOut()">Sign API</button>
+</div>
+
+<div>
+    <button type="button" onclick="callApi()">Call API</button>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/oidc-client/1.9.1/oidc-client.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
+<script src="~/main.js"></script>
+
+@* js-old文件夹下可以看到如何实现的认证
+
+    <script src="~/sign-in.js"></script>*@
+

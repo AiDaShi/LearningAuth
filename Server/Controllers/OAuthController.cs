@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -45,7 +46,8 @@ namespace Server.Controllers
             string grant_type, //认证access_token的请求流程
             string code, //身份认证过程的确认
             string redirect_uri, 
-            string client_id
+            string client_id,
+            string refresh_token
         ){
             //验证客户端代码的方法
 
@@ -70,7 +72,9 @@ namespace Server.Controllers
                 Constants.Audiznce,
                 claims,
                 notBefore: DateTime.Now,
-                expires: DateTime.Now.AddHours(1),
+                expires: grant_type== "refresh_token" 
+                ? DateTime.Now.AddMinutes(5)
+                : DateTime.Now.AddMilliseconds(1),
                 signingCredentials
                 );
             //获取tokenJson字符串
@@ -79,8 +83,8 @@ namespace Server.Controllers
             var response_type = new {
                 access_token,
                 token_type="Bearer",
-                raw_claim="oauthTutorial"
-
+                raw_claim="oauthTutorial",
+                refresh_token = "RefreshTokenSampleValueSomething77"
             };
             
             var responseJson = JsonConvert.SerializeObject(response_type);
@@ -91,6 +95,17 @@ namespace Server.Controllers
 
             return Redirect(redirect_uri);
 
+        }
+        
+        [Authorize]
+        public IActionResult Validate()
+        {
+            if (HttpContext.Request.Query.TryGetValue("access_token",out var accessToken))
+            {
+
+                return Ok();
+            }
+            return BadRequest();
         }
     }    
 }

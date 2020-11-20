@@ -43,6 +43,8 @@ namespace Server
 
                     config.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                     {
+                        //去掉时间误差
+                        ClockSkew = TimeSpan.Zero,
                         ValidIssuer = Constants.Issuer,
                         ValidAudience = Constants.Audiznce,
                         IssuerSigningKey = key

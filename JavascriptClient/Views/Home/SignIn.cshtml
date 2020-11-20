@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>SignIn Succeed Page</h1>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/oidc-client/1.9.1/oidc-client.min.js"></script>
+@*<script src="~/sign-in-callback.js"></script>*@
+
+<script>
+    var userManager = new Oidc.UserManager({
+        userStore: new Oidc.WebStorageStateStore({ store: window.localStorage }),
+        //type为Code后
+        //response_mode: "query"
+    });
+
+    userManager.signinCallback().then(res => {
+        console.log('处理已经完成，正在执行回调函数:',res);
+
+        window.location.href = '/home/index';
+    });
+</script>

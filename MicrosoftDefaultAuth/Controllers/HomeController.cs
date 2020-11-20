@@ -13,6 +13,7 @@ using MicrosoftDefaultAuth.Models;
 
 namespace MicrosoftDefaultAuth.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -25,6 +26,7 @@ namespace MicrosoftDefaultAuth.Controllers
             _authorizationService = authorizationService;
         }
 
+        
         public IActionResult Index()
         {
             return View();
